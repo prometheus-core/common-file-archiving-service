@@ -1,15 +1,13 @@
 package org.prometheus.commons.archiving.domain;
 
 
-import com.sun.xml.internal.bind.v2.TODO;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public enum PathPlaceholder {
-    YYYY("$YYYY","This is placeholder for year values.")
-    ,MM("$MM", "This is placeholder for month values");
+    $YYYY("$YYYY","This is placeholder for year values.")
+    ,$MM("$MM", "This is placeholder for month values");
 
     PathPlaceholder(
             String pathPlaceholderString,
@@ -35,8 +33,12 @@ public enum PathPlaceholder {
      * @return
      */
     private boolean isYear(String possibleYear){
-
-        // TODO
+        Integer possibleYearInt = Integer.getInteger(possibleYear);
+        if (possibleYear.length() != 4){
+            //throw new IllegalArgumentException("Year must be in 4 digit form");
+            return false;
+        }
+        return true;
     }
 
     /**
@@ -45,8 +47,24 @@ public enum PathPlaceholder {
      * @return
      */
     private boolean isMonth(String possibleMonth){
-        List<String> allPossibleMonths =  Arrays.asList("01","02",.... // TODO);
+        List<String> allPossibleMonths =  Arrays.asList(
+                "01",
+                "02",
+                "03",
+                "04",
+                "05",
+                "06",
+                "07",
+                "08",
+                "09",
+                "10",
+                "11",
+                "12");
 
-        // TODO
+        if (allPossibleMonths.contains(possibleMonth)){
+            return true;
+        } else {
+            return false;
+        }
     }
 }

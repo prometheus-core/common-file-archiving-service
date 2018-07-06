@@ -8,9 +8,8 @@ import java.util.List;
  */
 public class ArchiveProcessRecord {
 
-
     String sourcePath;
     List<String> files;
-    String/File archiveName;
-    Sting/File/Path archiveFolder;
+    String archiveName;
+    String archiveFolder;
 }

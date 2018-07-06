@@ -3,8 +3,8 @@ package org.prometheus.commons.archiving.core;
 import lombok.AllArgsConstructor;
 import lombok.NonNull;
 import lombok.extern.log4j.Log4j2;
+import org.prometheus.commons.archiving.domain.ArchiveConfigRecord;
 import org.prometheus.commons.archiving.domain.ArchiveProcessRecord;
-import org.prometheus.commons.archiving.domain.ArchiveRecord;
 import org.prometheus.commons.archiving.domain.PathPlaceholder;
 
 import java.util.ArrayList;
@@ -24,7 +24,7 @@ public class ArchiveUtil {
      *
      */
 
-    private ArchiveRecord archiveRecord;
+    private ArchiveConfigRecord archiveConfigRecord;
 
     private List<String> sourcePathSplit;
     private String sourcePathWithoutPlaceholders;
@@ -74,33 +74,22 @@ public class ArchiveUtil {
      */
     public void process(){
         // First we split source path
-        this.sourcePathSplit = splitFolderPath(archiveRecord.getSourcePath());
+        this.sourcePathSplit = splitFolderPath(archiveConfigRecord.getSourcePath());
 
 
         // Create a full list of all subfolders on the lowest level
-        this.allSourcePaths = createAllSourcePaths(archiveRecord.getSourcePath());
+        this.allSourcePaths = createAllSourcePaths(archiveConfigRecord.getSourcePath());
 
 
 
-        ..
-        .
-        .
-        .
-        .
 
-
-        ArchiveProcessRecord is created.
     }
 
-    private List<String> createAllSourcePaths() {
+    private List<String> createAllSourcePaths(String string) {
         String sourcePathWithoutPathPlaceholder;
         // TODO
 
-        you must itterate trpouig all directories
-
-                how to recursively search for subdirectories
-
-                you shoudl filter here by arcvhiveRecord.getArchiveTrigger
+        return new ArrayList<>();
 
     }
 
@@ -108,9 +97,9 @@ public class ArchiveUtil {
         StringBuffer sourcePathWithoutPathPlaceholder = null;
         for (String pathSplit : sourcePathSplit){
             if (
-                    !PathPlaceholder.YYYY.getPathPlaceholderString().equals(pathSplit)
+                    !PathPlaceholder.$YYYY.getPathPlaceholderString().equals(pathSplit)
                 &&
-            !PathPlaceholder.MM.getPathPlaceholderString().equals(pathSplit)){
+            !PathPlaceholder.$MM.getPathPlaceholderString().equals(pathSplit)){
                 sourcePathWithoutPathPlaceholder.append(pathSplit);
             }
 
@@ -118,16 +107,16 @@ public class ArchiveUtil {
         return  sourcePathWithoutPlaceholders.toString();
     }
 
-    doArchive(List<ArchiveProcessRecord> archiveProcessRecords){
+    public void doArchive(List<ArchiveProcessRecord> archiveProcessRecords){
         // iterate archiveProcessRecords
 
 
     }
 
-    compressFolder(){
+    public void compressFolder(){
 
     }
 
-    addFileToArchiveFile(){}
+    public void addFileToArchiveFile(){}
 
 }
