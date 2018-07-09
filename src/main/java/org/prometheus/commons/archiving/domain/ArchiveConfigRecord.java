@@ -15,12 +15,12 @@ public class ArchiveConfigRecord {
     /**
      * Dynamic record id for persistence.
      */
-    @Id
-    String id;
 
     /**
      * Pure configuration input data
      */
+
+    @Id
     String businessName;
 
     String sourcePath;
@@ -55,7 +55,7 @@ public class ArchiveConfigRecord {
     class ArchiveTimeType{
         Integer number;
 
-        ArchiveTimeUnit ArchiveTimeUnit;
+        ArchiveTimeUnit archiveTimeUnit;
     }
 
     enum ArchiveTimeUnit{
