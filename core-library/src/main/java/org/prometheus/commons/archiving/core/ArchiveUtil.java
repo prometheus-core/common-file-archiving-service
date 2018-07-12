@@ -11,6 +11,9 @@ import org.prometheus.commons.archiving.domain.PathPlaceholder;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Low level API class
+ */
 @AllArgsConstructor
 @Data
 @Log4j2
@@ -30,6 +33,7 @@ public class ArchiveUtil {
 
     private List<String> sourcePathSplit;
     private String sourcePathWithoutPlaceholders;
+
 
 
 
@@ -70,6 +74,7 @@ public class ArchiveUtil {
     }
 
     // Every sourcePath should be checked it exists
+
 
     /**
      * This will process one ArchiveRecord object -

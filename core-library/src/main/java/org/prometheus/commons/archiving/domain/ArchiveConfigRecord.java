@@ -26,8 +26,8 @@ public class ArchiveConfigRecord {
      *
      * This is result of directory analysis:
      * C:\Day ahead\DA reports\MyFolder - this folder is not selected
-     * C:\Day ahead\DA reports\2015\01 -> all files goes into Day_Ahead_2015_01.zip/ (xz LZMA2) /7zip
-     * C:\Day ahead\DA reports\2015\02 -> Day_Ahead_2015_02
+     * C:\Day ahead\DA reports\2015\ -> all files goes into Day_Ahead_2015_01.zip/ (xz LZMA2) /7zip
+     * C:\Day ahead\DA reports\2015\2 -> Day_Ahead_2015_02
      * C:\Day ahead\DA reports\2015\03
      * ...
      * C:\Day ahead\DA reports\2015\12

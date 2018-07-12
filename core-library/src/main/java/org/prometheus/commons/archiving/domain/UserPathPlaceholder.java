@@ -5,13 +5,15 @@ package org.prometheus.commons.archiving.domain;
 import java.util.Arrays;
 import java.util.List;
 
-public enum PathPlaceholder {
+public enum UserPathPlaceholder {
     $YYYY("$YYYY","This is placeholder for year values.")
     ,$MM("$MM", "This is placeholder for month values")
+    ,$M("$M", "This is placeholder for month values")
     ,$DD("$DD","")
     ,$HH("$HH","");
+    //$SEQUENCE and it will detect 123;
 
-    PathPlaceholder(
+    UserPathPlaceholder(
             String pathPlaceholderString,
             String description){
         this.pathPlaceholderString = pathPlaceholderString;
