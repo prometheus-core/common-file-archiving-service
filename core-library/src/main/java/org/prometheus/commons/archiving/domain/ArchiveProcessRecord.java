@@ -16,10 +16,22 @@ import java.util.List;
 @Data
 public class ArchiveProcessRecord {
 
+    /**
+     * example: Day_Ahead_2015_03.zip
+     */
+    String archiveFileName;
+
+    /**
+     * C:\Day ahead\DA reports\2015\03\
+     */
+    String archiveFolder;
+
+
+
     String sourcePath;
     List<String> files;
     String archiveName;
-    String archiveFolder;
+
     // Not required, dynamically calculated on the fly, but later stored in database
     ArchiveConfigRecord.Size sourcePathSize;
 }

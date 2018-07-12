@@ -9,9 +9,20 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.prometheus.commons.archiving.domain.ArchiveConfigRecord;
 
+import java.io.File;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CoreTest {
+
+    private boolean linuxPlatform;
+
+
+    C:/users
+    C:\\users
+
+
+    c:\users
 
     @Test
     public void testSourcePathPlaceholderDetection(){

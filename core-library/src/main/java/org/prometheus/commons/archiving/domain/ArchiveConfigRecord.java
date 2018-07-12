@@ -11,16 +11,9 @@ import org.springframework.data.annotation.Id;
 @NoArgsConstructor
 public class ArchiveConfigRecord {
 
-    
     /**
-     * Dynamic record id for persistence.
+     * Custom name provided by user for specific archiving record
      */
-
-    /**
-     * Pure configuration input data
-     */
-
-
     @Id
     String businessName;
 
@@ -31,7 +24,7 @@ public class ArchiveConfigRecord {
      * Example 1:
      * C:\Day ahead\DA reports\$YYYY\$MM
      *
-     * Real example:
+     * This is result of directory analysis:
      * C:\Day ahead\DA reports\MyFolder - this folder is not selected
      * C:\Day ahead\DA reports\2015\01 -> all files goes into Day_Ahead_2015_01.zip/ (xz LZMA2) /7zip
      * C:\Day ahead\DA reports\2015\02 -> Day_Ahead_2015_02
@@ -47,6 +40,9 @@ public class ArchiveConfigRecord {
      *
      * Example 2:
      * C:\myfiles
+     *
+     * Example no date in directory:
+     * C:\Day ahead\another reports\$YYYY
      */
     String sourcePath;
 
@@ -71,6 +67,13 @@ public class ArchiveConfigRecord {
      *
      * if archiveFileName = Day_Ahead_$YYYY_$MM -> each file is archived in specific file name
      * if archiveFileName = Day_Ahead_$YYYY -> All files for that year goes into single archive
+     *
+     * It should support multiple filters delimited by ; or |
+     * example: *.dat;*.txt
+     *
+     * MyFile_$YYYY_$MM*.dat
+     *
+     * name: FILE_$MM.txt
      */
     String fileMask;
 
@@ -98,12 +101,12 @@ public class ArchiveConfigRecord {
     ArchiveTimeType retentionPeriod;
 
     /**
-     * Day_Ahead_$YYYY_$MM
+     * example: Day_Ahead_$YYYY_$MM.zip
      */
     String archiveFileName;
 
     /**
-     * C:\Day ahead\DA reports\$YYYY\
+     * C:\Day ahead\DA reports\$YYYY\$MM\
      */
     String archiveFolder;
 
