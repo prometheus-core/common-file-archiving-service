@@ -6,10 +6,10 @@ import lombok.NonNull;
 import lombok.extern.log4j.Log4j2;
 import org.prometheus.commons.archiving.domain.ArchiveConfigRecord;
 import org.prometheus.commons.archiving.domain.ArchiveProcessRecord;
-import org.prometheus.commons.archiving.domain.PathPlaceholder;
 
 import java.util.ArrayList;
 import java.util.List;
+import org.prometheus.commons.archiving.domain.UserPathPlaceholder;
 
 /**
  * Low level API class
@@ -104,9 +104,9 @@ public class ArchiveUtil {
         StringBuffer sourcePathWithoutPathPlaceholder = null;
         for (String pathSplit : sourcePathSplit){
             if (
-                    !PathPlaceholder.$YYYY.getPathPlaceholderString().equals(pathSplit)
+                    !UserPathPlaceholder.$YYYY.getPathPlaceholderString().equals(pathSplit)
                 &&
-            !PathPlaceholder.$MM.getPathPlaceholderString().equals(pathSplit)){
+            !UserPathPlaceholder.$MM.getPathPlaceholderString().equals(pathSplit)){
                 sourcePathWithoutPathPlaceholder.append(pathSplit);
             }
 
