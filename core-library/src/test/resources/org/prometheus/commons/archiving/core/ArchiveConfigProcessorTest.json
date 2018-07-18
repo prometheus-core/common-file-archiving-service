@@ -1,0 +1,13 @@
+[
+    {
+        "config": {
+            "businessName": "testCreateArchiveSourceFilters",
+            "sourcePath": "C:\\Day ahead\\DA reports\\2018\\02",
+            "fileMask": "*.dat;*.txt",
+            "archiveFileName": "Day_Ahead_$YYYY_$MM.zip",
+            "archiveFolder": "C:\\Day ahead\\DA reports\\$YYYY\\$MM\\",
+            "deleteSourceFilesAfterArchive": true
+        },
+        "fileMasks": ["*.dat", "*.txt"]
+    }
+]

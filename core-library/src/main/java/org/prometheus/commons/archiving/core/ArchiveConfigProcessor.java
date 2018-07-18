@@ -1,5 +1,6 @@
 package org.prometheus.commons.archiving.core;
 
+import java.util.ArrayList;
 import java.util.List;
 import org.prometheus.commons.archiving.domain.ArchiveConfigRecord;
 import org.prometheus.commons.archiving.domain.ArchiveProcessRecord;
@@ -15,7 +16,12 @@ public class ArchiveConfigProcessor {
     }
 
     List<ArchiveSourceFilter> createArchiveSourceFilters(ArchiveConfigRecord configRecord) {
-        return null;
+        ArrayList<ArchiveSourceFilter> filters = new ArrayList<ArchiveSourceFilter>();
+        String[] fileMasks = configRecord.getFileMask().split("[,;]");
+        for (String fileMask : fileMasks) {
+            filters.add(new ArchiveSourceFilter(configRecord.getSourcePath(), fileMask));
+        }
+        return filters;
     }
 
 }
